@@ -16,6 +16,7 @@ echo "Starting Setup"
 echo -e "###\n\n"
 
 echo "  - Get the Cuda package"
+rm -rf cuda-repo-ubuntu1404_7.5-18_amd64.deb
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.5-18_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
 
@@ -28,8 +29,8 @@ echo "  - Install the required libraries"
 sudo apt-get install unzip cmake libcryptopp-dev gcc-4.8 g++-4.8 libleveldb-dev libjsoncpp-dev libjson-rpc-cpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential cuda -y
 
 echo "  - Get the ethminer code"
+rm -rf cpp-ethereum-master master.zip
 wget https://github.com/Genoil/cpp-ethereum/archive/master.zip
-rm -rf cpp-ethereum-master
 unzip master.zip
 
 echo "  - Prepare to build"
